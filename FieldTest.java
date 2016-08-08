@@ -16,4 +16,9 @@ public void hasName(){
   assertEquals("Kilrie", field.getName());
 }
 
+@Test 
+public void fieldStartsEmpty(){
+  assertEquals(0, field.livestockCount());
+}
+
 }
