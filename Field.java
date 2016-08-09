@@ -20,4 +20,18 @@ public int livestockCount(){
   }
   return count;
 }
+
+
+public void takeBuffalo(Buffalo buffalo){
+ if(fieldFull()) return;
+
+ int livestockCount = livestockCount();
+ livestock[livestockCount] = buffalo;
+}
+
+public boolean fieldFull(){
+  return livestockCount() == livestock.length;
+}
+
+
 }
