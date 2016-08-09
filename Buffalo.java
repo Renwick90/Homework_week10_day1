@@ -1,3 +1,3 @@
-public class Buffalo{
+public class Buffalo implements Moveable{
   
 }

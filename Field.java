@@ -1,10 +1,15 @@
+import java.util.*;
+
 public class Field{
   private String name;
-  private Buffalo[] livestock;
+  // private Buffalo[] livestock;
+  private ArrayList<Moveable> livestock;
 
 public Field(String name){
 this.name = name;
-this.livestock = new Buffalo[20];
+// this.livestock = new Buffalo[20];
+  this.livestock = new ArrayList<Moveable>();
+
 }
 
 public String getName(){
@@ -12,25 +17,13 @@ public String getName(){
 }
 
 public int livestockCount(){
-  int count = 0;
-  for(Buffalo buffalo : livestock ){
-    if (buffalo != null){
-      count++;
-    }
-  }
-  return count;
+ return livestock.size();
 }
 
 
-public void takeBuffalo(Buffalo buffalo){
- if(fieldFull()) return;
+public void takeBuffalo(Moveable animal){
+livestock.add(animal);
 
- int livestockCount = livestockCount();
- livestock[livestockCount] = buffalo;
-}
-
-public boolean fieldFull(){
-  return livestockCount() == livestock.length;
 }
 
 
